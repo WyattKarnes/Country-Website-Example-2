@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | New Zealand</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="explainer">
+
+    <header>
+        <h1>Behind the Scenes</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="home-item"><a href="index.html">Home</a></li>
+            <li class="milford-item"><a href="page1.html">Milford Sound</a></li>
+            <li class="hobbiton-item"><a href="page2.html">Hobbiton</a></li>
+            <li class="kiwi-item"><a href="page3.html">Kiwi Bird</a></li>
+        </ul>
+    </nav>
+
+    <main class="explainer-main">
+
+        <p class="explainer-intro">
+            This page breaks down the CSS and HTML techniques used to build this website.
+            Each technique includes the code and a live example you can interact with.
+        </p>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 1: Body ID Trick -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>1. The Body ID Trick</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Every page in this site shares one CSS file. To give each page its own unique background image,
+                    each <code>&lt;body&gt;</code> tag has a unique <code>id</code>. Then in CSS, you can target
+                    elements on a specific page by starting your selector with that id.
+                </p>
+                <pre>
+&lt;!-- index.html --&gt;
+&lt;body id="home"&gt;
+
+&lt;!-- page1.html --&gt;
+&lt;body id="milford"&gt;</pre>
+                <pre>
+/* Only applies on the home page */
+#home header {
+    background-image: url(images/home-bg.jpg);
+}
+
+/* Only applies on the Milford Sound page */
+#milford header {
+    background-image: url(images/milford-bg.jpg);
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — same &lt;header&gt; element, two different pages</div>
+                    <div class="demo-side-by-side">
+                        <div>
+                            <div class="demo-caption">id="home"</div>
+                            <div class="demo-page-preview" style="background-image: url(images/home-bg.jpg); background-size: cover; background-position: center 60%;"></div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">id="milford"</div>
+                            <div class="demo-page-preview" style="background-image: url(images/milford-bg.jpg); background-size: cover;"></div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">id="hobbiton"</div>
+                            <div class="demo-page-preview" style="background-image: url(images/hobbiton-bg.jpg); background-size: cover;"></div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">id="kiwi"</div>
+                            <div class="demo-page-preview" style="background-image: url(images/fall-bg.jpg); background-size: cover;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 2: Google Fonts -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>2. Google Fonts</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Instead of using a font already installed on the user's computer, you can load any font from
+                    Google's library by pasting a <code>&lt;link&gt;</code> tag into your <code>&lt;head&gt;</code>.
+                    Then reference it in CSS just like any other font.
+                </p>
+                <pre>
+&lt;!-- In the &lt;head&gt; of your HTML --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"&gt;</pre>
+                <pre>
+body {
+    font-family: 'Playfair Display', serif;
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — same sentence, two different fonts</div>
+                    <div class="demo-side-by-side">
+                        <div class="demo-font-sample" style="font-family: 'Playfair Display', serif;">
+                            <div class="demo-font-name">Playfair Display (Google Font)</div>
+                            The quick brown fox jumps over the lazy dog.
+                        </div>
+                        <div class="demo-font-sample" style="font-family: 'Times New Roman', serif;">
+                            <div class="demo-font-name">Times New Roman (built-in fallback)</div>
+                            The quick brown fox jumps over the lazy dog.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 3: Background Images -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>3. Background Images</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Any element can have a background image set in CSS. The three key properties are
+                    <code>background-size: cover</code> (scales the image to fill the element completely, cropping if needed),
+                    <code>background-repeat: no-repeat</code> (prevents tiling), and
+                    <code>background-position</code> (controls which part of the image stays in frame).
+                </p>
+                <pre>
+header {
+    background-image: url(images/home-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — background-size changes how the image fills the box</div>
+                    <div class="demo-side-by-side">
+                        <div>
+                            <div class="demo-caption">background-size: cover</div>
+                            <div class="demo-bg-box" style="background-image: url(images/home-image-3.jpg); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">background-size: contain</div>
+                            <div class="demo-bg-box" style="background-image: url(images/home-image-3.jpg); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">background-size: 100% 100%</div>
+                            <div class="demo-bg-box" style="background-image: url(images/home-image-3.jpg); background-size: 100% 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 4: CSS Animations -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>4. CSS Animations</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    CSS animations have two parts: a <code>@keyframes</code> block that defines what changes,
+                    and an <code>animation</code> property on the element that runs it. The <code>forwards</code>
+                    keyword means the element stays at the final keyframe value instead of snapping back.
+                    The <code>0.5s</code> delay means the animation waits half a second before starting.
+                </p>
+                <pre>
+@keyframes shrink-header {
+    0%   { height: 100vh; }
+    100% { height: 20vh; }
+}
+
+header {
+    animation: shrink-header 1s ease 0.5s forwards;
+    height: 100vh;
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — hover to play the animation</div>
+                    <div class="demo-animation-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 5: CSS Transitions -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>5. CSS Transitions</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    A transition smoothly animates a CSS property whenever it changes — usually on hover.
+                    You add <code>transition</code> to the element in its <em>normal</em> state, not in the
+                    <code>:hover</code> rule. That way it smoothly animates both entering and leaving the hover.
+                </p>
+                <pre>
+/* Normal state — defines the transition */
+nav > ul > li > a {
+    transition: transform 0.3s ease;
+}
+
+/* Hover state — just sets the target value */
+nav > ul > li:hover a {
+    transform: scale(1.2);
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — hover both boxes to see the difference</div>
+                    <div class="demo-side-by-side">
+                        <div>
+                            <div class="demo-transition-box with-transition">Hover me</div>
+                            <div class="demo-caption">With transition: transform 0.3s ease</div>
+                        </div>
+                        <div>
+                            <div class="demo-transition-box no-transition">Hover me</div>
+                            <div class="demo-caption">Without transition (instant snap)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 6: Image Zoom on Hover -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>6. Image Zoom on Hover</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Zooming an image on hover uses two elements working together. The container gets
+                    <code>overflow: hidden</code> so the zoomed image is clipped to its original edges.
+                    The image inside uses <code>transform: scale()</code> on hover, paired with a
+                    <code>transition</code> to animate it smoothly.
+                </p>
+                <pre>
+.home-pic {
+    overflow: hidden;  /* clips anything outside the box */
+    border-radius: 25px;
+}
+
+.home-pic > img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.home-pic:hover img {
+    transform: scale(1.3);
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — hover the image</div>
+                    <div class="demo-side-by-side">
+                        <div>
+                            <div class="demo-zoom-container">
+                                <img src="images/home-image-1.jpg" alt="Crystal-clear turquoise waters of Blue Lake surrounded by snow-capped mountains">
+                            </div>
+                            <div class="demo-caption">overflow: hidden — zoom is clipped</div>
+                        </div>
+                        <div>
+                            <div class="demo-zoom-container no-clip">
+                                <img src="images/home-image-1.jpg" alt="Crystal-clear turquoise waters of Blue Lake surrounded by snow-capped mountains">
+                            </div>
+                            <div class="demo-caption">Without overflow: hidden — zoom spills out</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 7: Nav Hover Photo Effect -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>7. The Nav Hover Photo Effect</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Each nav item reveals a background image when hovered. Because
+                    <code>background-image</code> can't be transitioned directly, the image snaps in instantly —
+                    but the text already has a <code>transition</code> on its scale, so the combined
+                    effect still feels polished.
+                </p>
+                <pre>
+.milford-item:hover {
+    background-image: url(images/milford-icon.jpg);
+    background-size: cover;
+    background-position: center 80%;
+}
+
+nav > ul > li:hover a {
+    color: white;
+    text-shadow: 0px 0px 4px black, 0px 0px 8px black;
+    transform: scale(1.2);
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — hover each nav item</div>
+                    <div class="demo-nav-row">
+                        <div class="demo-nav-item demo-home-item">
+                            <a href="#">Home</a>
+                        </div>
+                        <div class="demo-nav-item demo-milford-item">
+                            <a href="#">Milford Sound</a>
+                        </div>
+                        <div class="demo-nav-item demo-hobbiton-item">
+                            <a href="#">Hobbiton</a>
+                        </div>
+                        <div class="demo-nav-item demo-kiwi-item">
+                            <a href="#">Kiwi Bird</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 8: ::after Pseudo-Element -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>8. The ::after Pseudo-Element</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    A pseudo-element like <code>::after</code> inserts a virtual element after an element's
+                    content — no extra HTML needed. Here it draws a growing underline beneath the active
+                    nav link. It starts at <code>width: 0</code> and animates to <code>width: 100%</code>.
+                    Using <code>margin: 0 auto</code> makes it grow outward from the center rather than
+                    from the left.
+                </p>
+                <pre>
+#active > a::after {
+    content: '';           /* required, even if empty */
+    display: block;
+    height: 4px;
+    background-color: black;
+    width: 0;
+    margin: 0 auto;        /* grow from center outward */
+    animation: grow-underline 0.4s ease 1.5s forwards;
+}
+
+@keyframes grow-underline {
+    from { width: 0; }
+    to   { width: 100%; }
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — hover to see the underline grow (site uses auto-play; hover works here for repeatability)</div>
+                    <div class="demo-underline-container">
+                        <div class="demo-side-by-side demo-underline-row">
+                            <div style="text-align: center;">
+                                <a class="demo-underline-link center-grow" href="#">Center outward (margin: 0 auto)</a>
+                            </div>
+                            <div style="text-align: center;">
+                                <a class="demo-underline-link left-grow" href="#">Left to right (no margin)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 9: Flexbox -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>9. Flexbox</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    Flexbox is used throughout this site for layout. Setting <code>display: flex</code> on a
+                    container lets you control how its children are arranged.
+                    <code>justify-content</code> controls spacing along the main axis (horizontal by default),
+                    and <code>align-items</code> controls alignment on the cross axis (vertical by default).
+                </p>
+                <pre>
+/* Centers the h1 inside the header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Puts the four nav items in a row, centered */
+nav > ul {
+    display: flex;
+    justify-content: center;
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — the same three boxes, different justify-content values</div>
+                    <div class="demo-flex-row">
+                        <div class="demo-caption">justify-content: flex-start</div>
+                        <div class="demo-flex-container" style="justify-content: flex-start;">
+                            <div class="demo-flex-box">A</div>
+                            <div class="demo-flex-box">B</div>
+                            <div class="demo-flex-box">C</div>
+                        </div>
+                    </div>
+                    <div class="demo-flex-row">
+                        <div class="demo-caption">justify-content: center</div>
+                        <div class="demo-flex-container" style="justify-content: center;">
+                            <div class="demo-flex-box">A</div>
+                            <div class="demo-flex-box">B</div>
+                            <div class="demo-flex-box">C</div>
+                        </div>
+                    </div>
+                    <div class="demo-flex-row">
+                        <div class="demo-caption">justify-content: space-between</div>
+                        <div class="demo-flex-container" style="justify-content: space-between;">
+                            <div class="demo-flex-box">A</div>
+                            <div class="demo-flex-box">B</div>
+                            <div class="demo-flex-box">C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TECHNIQUE 10: Media Queries -->
+        <!-- ============================================================ -->
+        <div class="technique">
+            <div class="technique-header">
+                <h2>10. Media Queries</h2>
+            </div>
+            <div class="technique-body">
+                <p>
+                    A media query wraps CSS rules that only apply when the screen is a certain size.
+                    Everything inside the <code>@media</code> block overrides the normal rules when the
+                    condition is true. On this site, screens narrower than 768px get a stacked mobile layout.
+                    The <code>order</code> property is also used to ensure images always appear above text
+                    on mobile, regardless of their order in the HTML.
+                </p>
+                <pre>
+@media (max-width: 768px) {
+
+    nav > ul {
+        flex-direction: column;
+    }
+
+    .home-container {
+        flex-direction: column;
+    }
+
+    /* Always put images above text, no matter the HTML order */
+    .home-container .home-pic {
+        order: -1;
+    }
+
+}</pre>
+
+                <div class="demo">
+                    <div class="demo-label">Live Example — the same content, desktop layout vs mobile layout</div>
+                    <div class="demo-side-by-side demo-layout-comparison">
+                        <div>
+                            <div class="demo-caption">Desktop (flex-direction: row)</div>
+                            <div class="demo-layout-wide">
+                                <div class="demo-layout-box">Image</div>
+                                <div class="demo-layout-box">Text</div>
+                            </div>
+                            <div class="demo-layout-wide">
+                                <div class="demo-layout-box">Text</div>
+                                <div class="demo-layout-box">Image</div>
+                            </div>
+                            <div class="demo-layout-wide">
+                                <div class="demo-layout-box">Image</div>
+                                <div class="demo-layout-box">Text</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="demo-caption">Mobile (flex-direction: column, order: -1 on images)</div>
+                            <div class="demo-layout-narrow">
+                                <div class="demo-layout-box demo-layout-image">Image</div>
+                                <div class="demo-layout-box">Text</div>
+                            </div>
+                            <div class="demo-layout-narrow">
+                                <div class="demo-layout-box demo-layout-image">Image</div>
+                                <div class="demo-layout-box">Text</div>
+                            </div>
+                            <div class="demo-layout-narrow">
+                                <div class="demo-layout-box demo-layout-image">Image</div>
+                                <div class="demo-layout-box">Text</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
