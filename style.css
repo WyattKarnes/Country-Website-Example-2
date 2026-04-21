@@ -41,7 +41,7 @@ header {
 }
 
 header h1 {
-    font-size: 72pt;
+    font-size: 6rem;
     text-align: center;
     color: white;
     text-shadow:
@@ -65,8 +65,8 @@ nav>ul {
 }
 
 nav>ul>li {
-    padding: 40px;
-    margin: 10px;
+    padding: 2.5rem;
+    margin: 0.625rem;
     border-radius: 5px;
     width: 20%;
     text-align: center;
@@ -76,7 +76,7 @@ nav>ul>li>a {
     display: inline-block;
     text-decoration: none;
     color: black;
-    font-size: 24pt;
+    font-size: 2rem;
     font-weight: 800;
     transition: transform 0.3s ease;
 }
@@ -168,7 +168,7 @@ nav>ul>li:hover a {
 }
 
 .info-container>p {
-    font-size: 24pt;
+    font-size: 2rem;
     margin: 0;
     transition: transform 0.5s ease;
 }
@@ -212,12 +212,12 @@ nav>ul>li:hover a {
 main>p {
     width: 30%;
     margin: 20% 20%;
-    padding: 50px;
+    padding: 3rem;
 
     border-radius: 5px;
 
     text-align: center;
-    font-size: 24pt;
+    font-size: 2rem;
     color: white;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
 }
@@ -238,5 +238,71 @@ header {
 }
 
 
+
+/* #endregion */
+
+/* #region Mobile Styling */
+
+@media (max-width: 768px) {
+
+    /* #region Header */
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    /* #endregion */
+
+    /* #region Nav */
+
+    nav>ul {
+        flex-direction: column;
+        padding: 0.625rem 0;
+    }
+
+    nav>ul>li {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    nav>ul>li>a {
+        font-size: 1.5rem;
+    }
+
+    /* #endregion */
+
+    /* #region Homepage */
+
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-container>div {
+        width: 92%;
+        margin: 2% 0;
+    }
+
+    .home-container .home-pic {
+        order: -1;
+    }
+
+    .info-container>p {
+        font-size: 1.5rem;
+    }
+
+    /* #endregion */
+
+    /* #region Fact Pages */
+
+    main>p {
+        width: 80%;
+        margin: 10% auto;
+        font-size: 1.5rem;
+    }
+
+    /* #endregion */
+
+}
 
 /* #endregion */
