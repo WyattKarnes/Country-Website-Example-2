@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+/* #region Header Work */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+#home header {
+    background-image: url(images/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 60%;
+}
+
+#milford header {
+    background-image: url(images/milford-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hobbiton header {
+    background-image: url(images/hobbiton-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kiwi header {
+    background-image: url(images/fall-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header h1 {
+    font-size: 72pt;
+    text-align: center;
+    color: white;
+    text-shadow:
+        1px 1px 0px rgba(0, 0, 0, 0.8),
+        2px 2px 0px rgba(0, 0, 0, 0.7),
+        3px 3px 0px rgba(0, 0, 0, 0.6),
+        4px 4px 0px rgba(0, 0, 0, 0.5),
+        5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* #endregion */
+
+/* #region Nav */
+
+nav>ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav>ul>li {
+    padding: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 20%;
+    text-align: center;
+}
+
+nav>ul>li>a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-size: 24pt;
+    font-weight: 800;
+    transition: transform 0.3s ease;
+}
+
+nav>ul>li:hover a {
+    color: white;
+    text-shadow: 0px 0px 4px black, 0px 0px 8px black, 0px 0px 12px black;
+    transform: scale(1.2);
+}
+
+.home-item:hover {
+    background-image: url(images/NZ-icon.png);
+    background-size: cover;
+    background-position: left center;
+}
+
+.milford-item:hover {
+    background-image: url(images/milford-icon.jpg);
+    background-size: cover;
+    background-position: center 80%;
+}
+
+.hobbiton-item:hover {
+    background-image: url(images/hobbiton-icon.jpg);
+    background-size: cover;
+    background-position: center 60%;
+}
+
+.kiwi-item:hover {
+    background-image: url(images/kiwi-icon.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#active>a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background-color: black;
+    width: 0;
+    margin: 0 auto;
+    animation: grow-underline 0.4s ease 1.5s forwards;
+}
+
+@keyframes grow-underline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* #endregion */
+
+/* #region Homepage Styling */
+
+.home-container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-container>div {
+    width: 49%;
+    margin: 1%;
+}
+
+.home-pic {
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.home-pic>img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 0px 2px 3px rgb(0, 0, 0);
+    transition: transform 0.5s ease;
+}
+
+.home-pic:hover img {
+    transform: scale(1.3);
+}
+
+.info-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.info-container>p {
+    font-size: 24pt;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.info-container:hover {
+    box-shadow: 0px 0px 2px 3px rgb(0, 0, 0);
+}
+
+.info-container:hover p {
+    transform: scale(1.2);
+}
+
+/* #endregion */
+
+/* #region Fact Page Styling */
+
+.page-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#milford main {
+    background-image: url(images/milford-sound.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hobbiton main {
+    background-image: url(images/hobbiton.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kiwi main {
+    background-image: url(images/kiwi-bird.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main>p {
+    width: 30%;
+    margin: 20% 20%;
+    padding: 50px;
+
+    border-radius: 5px;
+
+    text-align: center;
+    font-size: 24pt;
+    color: white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+}
+
+@keyframes shrink-header {
+    0% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 20vh;
+    }
+}
+
+header {
+    animation: shrink-header 1s ease .5s forwards;
+    height: 100vh;
+}
+
+
+
+/* #endregion */
