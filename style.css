@@ -163,6 +163,7 @@ nav>ul>li:hover a {
     justify-content: center;
     align-items: center;
     border-radius: 25px;
+    padding: 2rem;
 
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
@@ -178,7 +179,7 @@ nav>ul>li:hover a {
 }
 
 .info-container:hover p {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 /* #endregion */
