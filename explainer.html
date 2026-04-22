@@ -252,17 +252,17 @@ nav > ul > li:hover a {
                     <code>transition</code> to animate it smoothly.
                 </p>
                 <pre>
-.home-pic {
+.home-pic-container {
     overflow: hidden;  /* clips anything outside the box */
     border-radius: 25px;
 }
 
-.home-pic > img {
+.home-pic-container > img {
     width: 100%;
     transition: transform 0.5s ease;
 }
 
-.home-pic:hover img {
+.home-pic-container:hover img {
     transform: scale(1.3);
 }</pre>
 
@@ -460,12 +460,12 @@ nav > ul {
         flex-direction: column;
     }
 
-    .home-container {
+    .home-layer {
         flex-direction: column;
     }
 
     /* Always put images above text, no matter the HTML order */
-    .home-container .home-pic {
+    .home-layer .home-pic-container {
         order: -1;
     }
 
